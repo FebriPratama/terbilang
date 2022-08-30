@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "FebriPratama\\Terbilang\\": "src"
+            "Riskihajar\\Terbilang\\": "src"
         }
     },
     "autoload-dev": {
@@ -37,10 +37,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "FebriPratama\\Terbilang\\TerbilangServiceProvider"
+                "Riskihajar\\Terbilang\\TerbilangServiceProvider"
             ],
             "aliases": {
-                "Terbilang": "FebriPratama\\Terbilang\\Facades\\Terbilang"
+                "Terbilang": "Riskihajar\\Terbilang\\Facades\\Terbilang"
             }
         }
     }

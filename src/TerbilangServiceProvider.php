@@ -36,7 +36,7 @@ class TerbilangServiceProvider extends ServiceProvider {
         );
 
         $this->app->singleton('terbilang', function($app){
-            return new Terbilang;
+            return new Terbilang("id");
         });
 
         $this->app->booting(function(){

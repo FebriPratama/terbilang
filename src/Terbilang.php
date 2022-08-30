@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Config;
 
+use Riskihajar\Terbilang\TerbilangDB;
+
 class Terbilang{
 
     protected $hyphen;
@@ -31,18 +33,22 @@ class Terbilang{
         't' => 'trillion',
     ];
 
-    public function __construct($lang = Config::get('app.locale'))
+    public function __construct($lang)
     {
-        $this->hyphen      = Lang::get('terbilang::terbilang.hyphen');
-        $this->conjunction = Lang::get('terbilang::terbilang.conjunction');
-        $this->separator   = Lang::get('terbilang::terbilang.separator');
-        $this->negative    = Lang::get('terbilang::terbilang.negative');
-        $this->decimal     = Lang::get('terbilang::terbilang.decimal');
-        $this->dictionary  = Lang::get('terbilang::terbilang.dictionary');
-        $this->prefix      = Lang::get('terbilang::terbilang.prefix');
-        $this->suffix      = Lang::get('terbilang::terbilang.suffix');
-        $this->prenum      = Lang::get('terbilang::terbilang.prenum');
-        $this->short       = Lang::get('terbilang::terbilang.short');
+
+        $TerbilangDB = new TerbilangDB();
+        $DB = $TerbilangDB->getAngka($lang);
+
+        $this->hyphen      = array_key_exists('hyphen', $DB) ? $DB['hyphen'] : [];
+        $this->conjunction = array_key_exists('conjunction', $DB) ? $DB['conjunction'] : [];
+        $this->separator   = array_key_exists('separator', $DB) ? $DB['separator'] : [];
+        $this->negative    = array_key_exists('negative', $DB) ? $DB['negative'] : [];
+        $this->decimal     = array_key_exists('decimal', $DB) ? $DB['decimal'] : [];
+        $this->dictionary  = array_key_exists('dictionary', $DB) ? $DB['dictionary'] : [];
+        $this->prefix      = array_key_exists('prefix', $DB) ? $DB['prefix'] : [];
+        $this->suffix      = array_key_exists('suffix', $DB) ? $DB['suffix'] : [];
+        $this->prenum      = array_key_exists('prenum', $DB) ? $DB['prenum'] : [];
+        $this->short       = array_key_exists('short', $DB) ? $DB['short'] : [];
 
         $this->lang = $lang;
     }

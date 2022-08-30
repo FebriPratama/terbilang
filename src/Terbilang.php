@@ -31,7 +31,7 @@ class Terbilang{
         't' => 'trillion',
     ];
 
-    public function __construct()
+    public function __construct($lang = Config::get('app.locale'))
     {
         $this->hyphen      = Lang::get('terbilang::terbilang.hyphen');
         $this->conjunction = Lang::get('terbilang::terbilang.conjunction');
@@ -44,7 +44,7 @@ class Terbilang{
         $this->prenum      = Lang::get('terbilang::terbilang.prenum');
         $this->short       = Lang::get('terbilang::terbilang.short');
 
-        $this->lang = Config::get('app.locale');
+        $this->lang = $lang;
     }
 
     public function make($number, $suffix=false, $prefix=false)

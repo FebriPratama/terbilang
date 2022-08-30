@@ -1,5 +1,5 @@
 {
-    "name": "FebriPratama/terbilang",
+    "name": "febripratama/terbilang",
     "description": "Hasil fork dari https://github.com/riskihajar/terbilang",
     "homepage": "https://github.com/riskihajar/terbilang",
     "license": "MIT",
@@ -9,6 +9,11 @@
             "name": "riskihajar",
             "email": "riskihajar@gmail.com",
             "homepage": "http://riskihajar.com"
+        },
+        {
+            "name": "febri",
+            "email": "argap13@gmail.com",
+            "homepage": "https://www.instagram.com/febriargapratama"
         }
     ],
     "require": {

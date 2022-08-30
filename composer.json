@@ -1,6 +1,6 @@
 {
-    "name": "riskihajar/terbilang",
-    "description": "Convert number & date to words in any language for Laravel 4 and above",
+    "name": "FebriPratama/terbilang",
+    "description": "Hasil fork dari https://github.com/riskihajar/terbilang",
     "homepage": "https://github.com/riskihajar/terbilang",
     "license": "MIT",
     "keywords": ["laravel", "terbilang", "number to words", "date to words", "number to roman"],
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Riskihajar\\Terbilang\\": "src"
+            "FebriPratama\\Terbilang\\": "src"
         }
     },
     "autoload-dev": {
@@ -32,10 +32,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Riskihajar\\Terbilang\\TerbilangServiceProvider"
+                "FebriPratama\\Terbilang\\TerbilangServiceProvider"
             ],
             "aliases": {
-                "Terbilang": "Riskihajar\\Terbilang\\Facades\\Terbilang"
+                "Terbilang": "FebriPratama\\Terbilang\\Facades\\Terbilang"
             }
         }
     }

@@ -44,7 +44,7 @@ Add the facade of this package to the `$aliases` array.
 #### Step 3: Publish Configuration (Optional)
 If you want customize configuration, you can run following command to publish config file
 ```
-php artisan vendor:publish --provider="FebriPratama\Terbilang\TerbilangServiceProvider"
+php artisan vendor:publish --provider="Riskihajar\Terbilang\TerbilangServiceProvider"
 ```
 
 ### Examples

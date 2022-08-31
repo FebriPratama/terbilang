@@ -33,7 +33,26 @@ class Terbilang{
         't' => 'trillion',
     ];
 
-    public function __construct($lang)
+    public function __construct()
+    {
+        $TerbilangDB = new TerbilangDB();
+        $DB = $TerbilangDB->getAngka("id");
+
+        $this->hyphen      = array_key_exists('hyphen', $DB) ? $DB['hyphen'] : [];
+        $this->conjunction = array_key_exists('conjunction', $DB) ? $DB['conjunction'] : [];
+        $this->separator   = array_key_exists('separator', $DB) ? $DB['separator'] : [];
+        $this->negative    = array_key_exists('negative', $DB) ? $DB['negative'] : [];
+        $this->decimal     = array_key_exists('decimal', $DB) ? $DB['decimal'] : [];
+        $this->dictionary  = array_key_exists('dictionary', $DB) ? $DB['dictionary'] : [];
+        $this->prefix      = array_key_exists('prefix', $DB) ? $DB['prefix'] : [];
+        $this->suffix      = array_key_exists('suffix', $DB) ? $DB['suffix'] : [];
+        $this->prenum      = array_key_exists('prenum', $DB) ? $DB['prenum'] : [];
+        $this->short       = array_key_exists('short', $DB) ? $DB['short'] : [];
+
+        $this->lang = "id";
+    }
+
+    public function setDictionary($lang)
     {
 
         $TerbilangDB = new TerbilangDB();
@@ -51,6 +70,8 @@ class Terbilang{
         $this->short       = array_key_exists('short', $DB) ? $DB['short'] : [];
 
         $this->lang = $lang;
+
+        return $this;
     }
 
     public function make($number, $suffix=false, $prefix=false)

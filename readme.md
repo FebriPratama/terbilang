@@ -24,11 +24,7 @@ Number to words conversion support multi language.
 
 #### Step 1: Install Through Composer
 ```
-composer require FebriPratama/terbilang
-```
-or add this to `composer.json`
-```
-    "FebriPratama/terbilang": "^1.0"
+composer require febripratama/terbilang
 ```
 then run `composer update`
 
@@ -38,11 +34,11 @@ For Laravel 4 Please use `1.0.4` version
 #### Step 2: Add Providers & Aliases
 In the `$providers` array add the service providers for this package.
 ```
-FebriPratama\Terbilang\TerbilangServiceProvider::class,
+Riskihajar\Terbilang\TerbilangServiceProvider::class,
 ```
 Add the facade of this package to the `$aliases` array.
 ```
-'Terbilang' => FebriPratama\Terbilang\Facades\Terbilang::class,
+'Terbilang' => Riskihajar\Terbilang\Facades\Terbilang::class,
 ```
 
 #### Step 3: Publish Configuration (Optional)
